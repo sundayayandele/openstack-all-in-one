@@ -1,4 +1,4 @@
-# BlueHarvest AI Model Use Case Guide
+# Private Cloud AI Model Use Case Guide
 **Private Cloud Intelligence Platform**
 
 *Prepared by Private Cloud | February 2026*
@@ -7,9 +7,9 @@
 
 ## Introduction
 
-The BlueHarvest AI platform provides access to eight carefully selected open-source large language models, each optimized for specific use cases. This guide helps administrators and users select the right model for each task, maximizing quality and efficiency across the platform.
+The Private Cloud AI platform provides access to eight carefully selected open-source large language models, each optimized for specific use cases. This guide helps administrators and users select the right model for each task, maximizing quality and efficiency across the platform.
 
-All models run locally on the BlueHarvest AI infrastructure via Ollama, ensuring complete data privacy and zero dependence on external API services. Models are accessible through the web interface at **lls.blueharvestai.com**, authenticated via OpenStack.
+All models run locally on the Private Cloud AI infrastructure via Ollama, ensuring complete data privacy and zero dependence on external API services. Models are accessible through the web interface at **lls.Private Cloudai.com**, authenticated via OpenStack.
 
 ---
 
@@ -53,8 +53,8 @@ A compact, high-efficiency general-purpose model that punches well above its wei
 #### Not Ideal For
 Complex multi-step reasoning, very large document analysis, or tasks requiring deep domain expertise.
 
-#### BlueHarvest AI Recommendation
-Use Mistral as your **default daily driver model**. It offers the best balance of speed and quality for routine tasks, making it ideal as the primary model for most BlueHarvest AI users.
+#### Private Cloud AI Recommendation
+Use Mistral as your **default daily driver model**. It offers the best balance of speed and quality for routine tasks, making it ideal as the primary model for most Private Cloud AI users.
 
 ---
 
@@ -81,7 +81,7 @@ Meta's foundational open-source model with 13 billion parameters. LLaMA 2 13B pr
 #### Not Ideal For
 Highly specialized coding tasks, advanced mathematical reasoning, or tasks where the latest training data is critical.
 
-#### BlueHarvest AI Recommendation
+#### Private Cloud AI Recommendation
 Choose LLaMA 2 13B when you need more depth than Mistral can provide, particularly for content writing and knowledge-heavy conversations. It is a **solid middle-ground model**.
 
 ---
@@ -109,8 +109,8 @@ A distilled reasoning model that inherits chain-of-thought capabilities from the
 #### Not Ideal For
 Creative writing, casual conversation, or tasks where reasoning overhead is unnecessary.
 
-#### BlueHarvest AI Recommendation
-Use DeepSeek-R1 whenever you face problems that require **structured thinking, mathematical reasoning, or step-by-step analysis**. It is the go-to model for analytical and STEM-related queries on the BlueHarvest AI platform.
+#### Private Cloud AI Recommendation
+Use DeepSeek-R1 whenever you face problems that require **structured thinking, mathematical reasoning, or step-by-step analysis**. It is the go-to model for analytical and STEM-related queries on the Private Cloud AI platform.
 
 ---
 
@@ -137,7 +137,7 @@ Mixtral is a Mixture of Experts (MoE) model with 46.7 billion total parameters b
 #### Not Ideal For
 Quick, simple queries where speed matters more than depth, or environments with less than 28 GB of available RAM.
 
-#### BlueHarvest AI Recommendation
+#### Private Cloud AI Recommendation
 Mixtral is the **premium model** on the platform. Deploy it for your most demanding tasks where output quality is paramount, such as enterprise document analysis, complex code generation, or when serving advanced users who need frontier-level local AI.
 
 ---
@@ -165,7 +165,7 @@ Developed by Alibaba Cloud, Qwen 2.5 14B is a strong multilingual model with exc
 #### Not Ideal For
 Tasks exclusively in English where a smaller model would suffice, or pure creative writing tasks.
 
-#### BlueHarvest AI Recommendation
+#### Private Cloud AI Recommendation
 Qwen 2.5 14B is ideal for **business automation, structured data tasks, and multilingual deployments**. For Private Cloud clients working with diverse language requirements or needing AI-powered data processing pipelines, this model delivers excellent value.
 
 ---
@@ -193,7 +193,7 @@ Google DeepMind's Gemma 2 9B is an efficient, well-rounded model that excels at 
 #### Not Ideal For
 Highly creative or unconstrained text generation, or tasks requiring expertise beyond its training scope.
 
-#### BlueHarvest AI Recommendation
+#### Private Cloud AI Recommendation
 Deploy Gemma 2 for **customer-facing applications and educational platforms** where safety, accuracy, and reliability are non-negotiable. It is particularly well-suited for Private Cloud's LMS and training applications.
 
 ---
@@ -221,7 +221,7 @@ Microsoft's Phi-3 14B is a research-optimized model that achieves remarkable per
 #### Not Ideal For
 Very long context tasks, heavy multilingual workloads, or highly creative storytelling.
 
-#### BlueHarvest AI Recommendation
+#### Private Cloud AI Recommendation
 Phi-3 is excellent for **development teams and technical staff**. Use it for code generation, technical documentation, and research tasks where Microsoft's training data quality translates into precise, well-structured outputs.
 
 ---
@@ -249,7 +249,7 @@ Meta's specialized code-focused model built on the LLaMA 2 architecture with add
 #### Not Ideal For
 General conversation, creative writing, knowledge-based Q&A, or non-programming tasks.
 
-#### BlueHarvest AI Recommendation
+#### Private Cloud AI Recommendation
 Code Llama is the **dedicated coding assistant** on the platform. Use it exclusively for software development tasks. For Private Cloud's DevOps automation, infrastructure scripting, and internal tool development, this model will deliver the most precise and contextually aware code output.
 
 ---
@@ -275,20 +275,20 @@ Use this quick-reference guide to select the optimal model based on your task ty
 
 ## Infrastructure Notes
 
-All eight models are hosted on the **BlueHarvest AI VPS infrastructure** running Ollama inside a Docker container on an OpenStack virtual machine (10.0.2.137). 
+All eight models are hosted on the **Private Cloud AI VPS infrastructure** running Ollama inside a Docker container on an OpenStack virtual machine (10.0.2.137). 
 
 ### Technical Specifications
 - **Total Storage Required:** ~73 GB
 - **Memory Management:** Models loaded into RAM on demand
 - **Concurrent Models:** Typically 1-2 models in memory at any time
 - **Access Authentication:** OpenStack Keystone
-- **Login Portal:** cloud.blueharvestai.com (Horizon Dashboard)
+- **Login Portal:** cloud.Private Cloudai.com (Horizon Dashboard)
 - **Session Duration:** 8 hours (signed session cookie)
 - **Chat History:** Stored server-side per user, persists across browsers and devices
 
 ### Access Information
-- **LLM Interface:** https://lls.blueharvestai.com
-- **Dashboard:** https://cloud.blueharvestai.com
+- **LLM Interface:** https://lls.Private Cloudai.com
+- **Dashboard:** https://cloud.Private Cloudai.com
 - **Authentication:** OpenStack Keystone via Horizon
 
 ---
@@ -296,7 +296,7 @@ All eight models are hosted on the **BlueHarvest AI VPS infrastructure** running
 ## Platform Benefits
 
 ### ✅ **Complete Data Privacy**
-All models run locally on BlueHarvest AI infrastructure with zero external API calls.
+All models run locally on Private Cloud AI infrastructure with zero external API calls.
 
 ### ✅ **Cost Efficiency**
 No per-token pricing or API fees - unlimited usage within infrastructure capacity.
@@ -314,10 +314,10 @@ Models operate without internet connectivity once deployed.
 
 ## Support & Contact
 
-**BlueHarvest AI Platform**  
-**Website:** blueharvestai.com  
-**LLM Service:** lls.blueharvestai.com  
-**Dashboard:** cloud.blueharvestai.com
+**Private Cloud AI Platform**  
+**Website:** Private Cloudai.com  
+**LLM Service:** lls.Private Cloudai.com  
+**Dashboard:** cloud.Private Cloudai.com
 
 *For technical support or model recommendations, contact your Private Cloud administrator.*
 
