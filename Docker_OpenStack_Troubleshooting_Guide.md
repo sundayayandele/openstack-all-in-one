@@ -3,7 +3,7 @@
 
 *Date: February 21, 2026*  
 *System: BlueHarvest AI Infrastructure*  
-*IP: 89.233.107.185*
+*IP: xx.xxx.xxx.xxx*
 
 ---
 
@@ -131,7 +131,7 @@ invalid character '"' after top-level value
     "max-size": "50m"
   },
   "hosts": ["unix:///var/run/docker.sock"]
-}  "hosts": ["unix:///var/run/docker.sock", "tcp://89.233.107.185:2375"]
+}  "hosts": ["unix:///var/run/docker.sock", "tcp://xx.xxx.xxx.xxx:2375"]
 }
 ```
 
@@ -168,7 +168,7 @@ cat > /etc/docker/daemon.json << 'EOF'
   },
   "hosts": [
     "unix:///var/run/docker.sock",
-    "tcp://89.233.107.185:2375"
+    "tcp://xx.xxx.xxx.xxx:2375"
   ]
 }
 EOF
@@ -200,7 +200,7 @@ cat /etc/docker/daemon.json
   },
   "hosts": [
     "unix:///var/run/docker.sock",
-    "tcp://89.233.107.185:2375"
+    "tcp://xx.xxx.xxx.xxx:2375"
   ]
 }
 ```
@@ -235,7 +235,7 @@ systemctl status docker
 
 Feb 21 23:04:43 blueharvestai dockerd[1769012]: time="..." level=info msg="Docker daemon"
 Feb 21 23:04:43 blueharvestai dockerd[1769012]: time="..." level=info msg="API listen on /var/run/docker.sock"
-Feb 21 23:04:43 blueharvestai dockerd[1769012]: time="..." level=info msg="API listen on 89.233.107.185:2375"
+Feb 21 23:04:43 blueharvestai dockerd[1769012]: time="..." level=info msg="API listen on xx.xxx.xxx.xxx:2375"
 Feb 21 23:04:43 blueharvestai systemd[1]: Started Docker Application Container Engine.
 ```
 
@@ -281,11 +281,11 @@ docker start $(docker ps -a -q)
 e5aca1bb4815  ✅
 16b98f0ba284  ✅
 Error response from daemon: failed to set up container networking: 
-  legacy plugin: Post "http://89.233.107.185:23750/Plugin.Activate": 
-  dial tcp 89.233.107.185:23750: connect: connection refused
+  legacy plugin: Post "http://xx.xxx.xxx.xxx:23750/Plugin.Activate": 
+  dial tcp xx.xxx.xxx.xxx:23750: connect: connection refused
 Error response from daemon: failed to set up container networking: 
-  legacy plugin: Post "http://89.233.107.185:23750/Plugin.Activate": 
-  dial tcp 89.233.107.185:23750: connect: connection refused
+  legacy plugin: Post "http://xx.xxx.xxx.xxx:23750/Plugin.Activate": 
+  dial tcp xx.xxx.xxx.xxx:23750: connect: connection refused
 9bb41537ee80  ✅
 c451467d66ff  ✅
 [... 35 more containers started successfully ...]
@@ -371,7 +371,7 @@ docker logs horizon --tail 50
 + echo 'Running command: '\''/usr/sbin/apache2 -DFOREGROUND'\'''
 + exec /usr/sbin/apache2 -DFOREGROUND
 Running command: '/usr/sbin/apache2 -DFOREGROUND'
-AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 89.233.107.185. 
+AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using xx.xxx.xxx.xxx. 
 Set the 'ServerName' directive globally to suppress this message
 ```
 
