@@ -3,7 +3,7 @@
 
 *Date: February 22, 2026 - 09:45 UTC*  
 *System: BlueHarvest AI OpenStack Infrastructure*  
-*Server: 89.233.107.185 (blueharvestai.com)*
+*Server: xx.xxx.xxx.xxx (blueharvestai.com)*
 
 ---
 
@@ -235,8 +235,8 @@ Last Exit: 4 hours ago
 **Error:**
 ```
 Error response from daemon: failed to set up container networking: 
-legacy plugin: Post "http://89.233.107.185:23750/Plugin.Activate": 
-dial tcp 89.233.107.185:23750: connect: connection refused
+legacy plugin: Post "http://xx.xxx.xxx.xxx:23750/Plugin.Activate": 
+dial tcp xx.xxx.xxx.xxx:23750: connect: connection refused
 ```
 
 **Impact:**
@@ -289,7 +289,7 @@ Auth: Cookie-based (commented out for testing)
 
 **Network Test Results:**
 ```bash
-✅ DNS resolution: Working (89.233.107.185)
+✅ DNS resolution: Working (xx.xxx.xxx.xxx)
 ✅ HTTPS certificate: Valid (Let's Encrypt)
 ✅ Nginx listening: Port 443 active
 ❌ Backend reachable: No route to host (Error 113)
@@ -332,10 +332,10 @@ Zombie processes: 9 worker processes remained
 
 **DNS Records (Hostinger):**
 ```
-✅ cloud.blueharvestai.com → 89.233.107.185
-✅ lls.blueharvestai.com   → 89.233.107.185
-✅ mail.blueharvestai.com  → 89.233.107.185
-✅ api.blueharvestai.com   → 89.233.107.185
+✅ cloud.blueharvestai.com → xx.xxx.xxx.xxx
+✅ lls.blueharvestai.com   → xx.xxx.xxx.xxx
+✅ mail.blueharvestai.com  → xx.xxx.xxx.xxx
+✅ api.blueharvestai.com   → xx.xxx.xxx.xxx
 ```
 
 **OpenStack Internal Network:**
@@ -380,7 +380,7 @@ The `/etc/docker/daemon.json` file became corrupted with duplicate JSON keys:
   "iptables": false,
   "log-opts": {"max-file": "5", "max-size": "50m"},
   "hosts": ["unix:///var/run/docker.sock"]
-}  "hosts": ["unix:///var/run/docker.sock", "tcp://89.233.107.185:2375"]
+}  "hosts": ["unix:///var/run/docker.sock", "tcp://xx.xxx.xxx.xxx:2375"]
 }
 ```
 
@@ -395,7 +395,7 @@ The `/etc/docker/daemon.json` file became corrupted with duplicate JSON keys:
 - Complete infrastructure failure
 
 **How It Likely Happened:**
-1. Manual edit to add TCP socket (`tcp://89.233.107.185:2375`)
+1. Manual edit to add TCP socket (`tcp://xx.xxx.xxx.xxx:2375`)
 2. Editor added new hosts entry instead of merging
 3. No JSON validation before saving
 4. Docker daemon crashed on next restart
@@ -675,7 +675,7 @@ docker ps | grep kuryr
 
 # Port 23750 should be listening
 netstat -tulpn | grep 23750
-# Expected: tcp ... 89.233.107.185:23750 ... LISTEN
+# Expected: tcp ... xx.xxx.xxx.xxx:23750 ... LISTEN
 
 # Test with Ollama
 docker start 172daf97e4cd
